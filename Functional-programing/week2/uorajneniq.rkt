@@ -1,0 +1,30 @@
+(define (prime? n)
+  (define (helper a)   
+    (if (= 0 (remainder n (- a 1)))
+        (if ( = 1 (- a 1))
+            #t
+            #f)
+        (helper (- a 1))))
+  (helper n))
+;(prime? 19)
+
+(define (mygcd a b)
+  (if (= b 0)
+      a
+      (mygcd b (remainder a b))))
+
+;(gcd 9 111)
+
+(define (user-gcd u v)
+ (define (pos-gcd u v)
+ (if (> u v)
+ (bas-gcd u v)
+ (bas-gcd v u)))
+ (define (bas-gcd u v)
+ (if (= v 0)
+ u
+ (bas-gcd v (remainder u v))))
+ (cond [(= u 0) (abs v)]
+ [(= v 0) (abs u)]
+ [else (pos-gcd (abs u) (abs v))]))
+

@@ -1,0 +1,4 @@
+(define (prime? n)
+  (if (= 0 (remaider x (- x 1)))
+         true
+         (prime? (- n 1))))

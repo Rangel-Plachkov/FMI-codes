@@ -1,0 +1,6 @@
+Elizabeth2
+britannica.com
+books/queen.txt
+1.8
+333
+1

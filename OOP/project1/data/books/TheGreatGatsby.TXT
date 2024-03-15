@@ -1,0 +1,6 @@
+TheGreatGatsby
+F. Fitzgerald
+books/TheGreatGatsby.txt
+5
+44444444444
+book sumunary

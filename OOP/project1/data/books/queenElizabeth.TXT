@@ -1,0 +1,6 @@
+Elizabeth2
+britannica.com
+books/queenElizabeth.txt
+1.8
+333
+The queen of england

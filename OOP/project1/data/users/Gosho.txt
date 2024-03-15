@@ -1,0 +1,3 @@
+Gosho
+password
+1

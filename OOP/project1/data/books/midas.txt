@@ -1,0 +1,6 @@
+midas
+myth
+books/midas.txt
+3.7
+11111111
+golden touch

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="FXMLController">
+    <top>
+        <VBox>
+            <MenuBar>
+                <Menu text="File">
+                    <MenuItem text="Load" onAction="#handleLoad"/>
+                    <MenuItem text="Save As" onAction="#handleSaveAs"/>
+                    <MenuItem text="Quit" onAction="#handleQuit"/>
+                </Menu>
+                <Menu text="Data">
+                    <MenuItem text="Sort" onAction="#handleSortData"/>
+                    <MenuItem text="Compute Average" onAction="#handleComputeAverage"/>
+                    <MenuItem text="Group Data" onAction="#handleGroupData"/>
+                </Menu>
+            </MenuBar>
+            <TextArea fx:id="textArea" prefWidth="800" prefHeight="600"/>
+        </VBox>
+    </top>
+
+</BorderPane>

@@ -1,0 +1,4 @@
+cd OOP/project2
+g++ Source.cpp myString/myString.cpp atribute/atribute.cpp XMLelement/XMLelement.cpp Parser/Parser.cpp Interface/Interface.cpp 
+1-o Source.exe ; ./Source.exe
+
