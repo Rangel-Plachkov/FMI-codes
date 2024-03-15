@@ -2,6 +2,8 @@ moidom.pdf
 Computer-Graphics-Basics/project2/mannequin.pdf
 *.exe
 *.o
+*.iml
+.idea/
 
 ### IntelliJ IDEA ###
 out/
