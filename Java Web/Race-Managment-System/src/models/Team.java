@@ -1,14 +1,16 @@
+package models;
+
 import java.util.ArrayList;
 
 @SuppressWarnings("UnusedDeclaration")
 public class Team {
-    private static final String DEFAULT_NAME = "Unknown Team";
+    private static final String DEFAULT_NAME = "Unknown models.Team";
     private String name;
     private final ArrayList<Racer> racers;
 
     public static void main(String[] args) {
         Team team1 = new Team();
-        Team team2 = new Team("Team 2");
+        Team team2 = new Team("models.Team 2");
         System.out.println(team1);
         System.out.println(team2);
     }
@@ -39,7 +41,7 @@ public class Team {
     }
     @Override
     public String toString() {
-        return String.format("Team: %s, %d racers", name, racers.size());
+        return String.format("models.Team: %s, %d racers", name, racers.size());
     }
 
 

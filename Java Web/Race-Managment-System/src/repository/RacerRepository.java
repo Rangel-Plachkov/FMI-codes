@@ -1,3 +1,7 @@
+package repository;
+
+import models.Racer;
+
 import java.util.Map;
 import java.util.Optional;
 @SuppressWarnings("UnusedDeclaration")

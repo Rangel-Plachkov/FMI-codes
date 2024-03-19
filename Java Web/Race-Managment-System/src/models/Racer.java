@@ -1,3 +1,5 @@
+package models;
+
 @SuppressWarnings("UnusedDeclaration")
 public class Racer {
     private static final String DEFAULT_NAME = "Unknown";
@@ -60,7 +62,7 @@ public class Racer {
     }
     @Override
     public String toString() {
-        return String.format("Racer %d: %s %s, %d years old", ID, firstName, lastName, age);
+        return String.format("models.Racer %d: %s %s, %d years old", ID, firstName, lastName, age);
     }
 
 }

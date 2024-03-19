@@ -1,21 +1,25 @@
+package models;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 @SuppressWarnings("UnusedDeclaration")
 public class Event {
-    private static final String DEFAULT_NAME = "Unknown Event";
-    private Integer nextID = 0;
+    private static final String DEFAULT_NAME = "Unknown models.Event";
+    private static Integer nextID = 0;
     private Integer ID;
     private String name;
-    private  Track track;
+    private Track track;
     private final ArrayList<Team> teams;
     private LocalDate date;
 
     public static void main(String[] args) {
         Event event1 = new Event();
-        Event event2 = new Event("Event 2", new Track("Track 2", 100), new ArrayList<>(), LocalDate.now());
+        Event event2 = new Event("models.Event 2", new Track("models.Track 2", 100), new ArrayList<>(), LocalDate.now());
         System.out.println(event1);
         System.out.println(event2);
     }
+
+
     public Event() {
         setID();
         setName(DEFAULT_NAME);
@@ -66,6 +70,6 @@ public class Event {
     }
     @Override
     public String toString() {
-        return String.format("Event %d: %s, %s, %d teams, %s", ID, name, track, teams.size(), date);
+        return String.format("models.Event %d: %s, %s, %d teams, %s", ID, name, track, teams.size(), date);
     }
 }
