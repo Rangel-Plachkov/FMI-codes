@@ -7,21 +7,21 @@ public class Track {
     private static Integer nextID = 0;
     public Integer ID;
     public String name;
-    public Integer length; //in meters
+    public Integer length;
 
     public static void main(String[] args) {
         Track track1 = new Track();
-        track1.setID();
         Track track2 = new Track("models.Track 2", 100);
-        track2.setID();
         System.out.println(track1);
         System.out.println(track2);
     }
     public Track() {
+        setID();
         setName(DEFAULT_NAME);
         setLength(DEFAULT_LENGTH);
     }
     public Track(String name, Integer length) {
+        setID();
         setName(name);
         setLength(length);
     }

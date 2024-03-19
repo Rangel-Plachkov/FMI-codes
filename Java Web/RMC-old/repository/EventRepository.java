@@ -5,29 +5,18 @@ import models.Event;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.HashMap;
 import java.util.Optional;
-
-import java.util.stream.Collectors;
 
 @SuppressWarnings("UnusedDeclaration")
 public class EventRepository {
 
-    private static final Map<Integer, Event> eventTable = new HashMap<>();
+    private Map<Integer, Event> eventTable;
 
-    public void createEvent(Event event) {
-        if(event.getID() != null) {
-            throw new IllegalArgumentException("Cannot create Event with already given ID.");
-        }
-        event.setID();
+    public void addEvent(Event event) {
         eventTable.put(event.getID(), event);
     }
-    public void updateEvent(Event event) {
-        if(event.getID() == null) {
-            throw new IllegalArgumentException("Cannot update Event without ID.");
-        }
-        eventTable.put(event.getID(), event);
-    }
+
+
     public boolean deleteEventById(Integer id) {
         return eventTable.remove(id) != null;
     }

@@ -12,19 +12,19 @@ public class Racer {
 
     public static void main(String[] args) {
         Racer racer1 = new Racer();
-        racer1.setID();
         Racer racer2 = new Racer("John", "Doe", 25);
-        racer2.setID();
         System.out.println(racer1);
         System.out.println(racer2);
     }
 
     public Racer() {
+        setID();
         setFirstName(DEFAULT_NAME);
         setLastName(DEFAULT_NAME);
         setAge(DEFAULT_AGE);
     }
     public Racer(String firstName, String lastName, Integer age) {
+        setID();
         setFirstName(firstName);
         setLastName(lastName);
         setAge(age);

@@ -10,26 +10,13 @@ import java.util.ArrayList;
 @SuppressWarnings("UnusedDeclaration")
 public class TrackRepository {
 
-    private static final Map<Integer, Track> trackMapTable = new HashMap<>();
+    private final Map<Integer, Track> trackMapTable = new HashMap<>();
 
 
-    public void createTrack(Track track) {
-        if (track.getID() != null) {
-            throw new IllegalArgumentException("Cannot create Track with already given ID.");
-        }
-        track.setID();
-        trackMapTable.put(track.getID(), track);
-    }
-    public void updateTrack(Track track) {
-        if (track.getID() == null) {
-            throw new IllegalArgumentException("Cannot update Track without ID.");
-        }
+    public void addTrack(Track track) {
         trackMapTable.put(track.getID(), track);
     }
 
-    public boolean deleteTrackById(Integer id) {
-        return trackMapTable.remove(id) != null;
-    }
     public boolean deleteTrackByName(String name) {
         for (Map.Entry<Integer, Track> entry : trackMapTable.entrySet()) {
             if (entry.getValue().getName().equals(name)) {

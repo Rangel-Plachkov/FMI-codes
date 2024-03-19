@@ -5,7 +5,6 @@ import java.util.ArrayList;
 @SuppressWarnings("UnusedDeclaration")
 public class Event {
     private static final String DEFAULT_NAME = "Unknown models.Event";
-    private static final LocalDate DEFAULT_DATE = LocalDate.EPOCH;
     private static Integer nextID = 0;
     private Integer ID;
     private String name;
@@ -15,20 +14,20 @@ public class Event {
 
     public static void main(String[] args) {
         Event event1 = new Event();
-        event1.setID();
         Event event2 = new Event("models.Event 2", new Track("models.Track 2", 100), new ArrayList<>(), LocalDate.now());
-        event2.setID();
         System.out.println(event1);
         System.out.println(event2);
     }
 
 
     public Event() {
+        setID();
         setName(DEFAULT_NAME);
         teams = new ArrayList<>();
         date = LocalDate.now();
     }
     public Event(String name, Track track , ArrayList<Team> teams, LocalDate date) {
+        setID();
         setName(name);
         setTrack(track);
         this.teams = teams;
