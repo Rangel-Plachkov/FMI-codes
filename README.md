@@ -6,23 +6,6 @@ This repository contains all the code written during my Computer Science study a
 
 Throughout my time at FMI, I've worked on various projects, assignments, and exercises covering a wide range of topics in computer science. This repository serves as a comprehensive collection of all the code I've written during my studies.
 
-## Structure
-
-The repository is organized into directories based on the courses and topics covered during my CS study. Each directory contains code related to a specific subject area or project. Below is a brief overview of the directory structure:
-
-- **Algorithms_and_Data_Structures**: Implementations of various algorithms and data structures studied during courses such as Introduction to Algorithms, Data Structures, and Algorithm Design.
-  
-- **Programming_Languages**: Code written in different programming languages studied at FMI, including Java, Python, C/C++, and others.
-  
-- **Databases**: Database-related projects and exercises covering topics like SQL, relational databases, and database management systems.
-  
-- **Web_Development**: Web development projects, assignments, and exercises focusing on frontend, backend, and full-stack development.
-  
-- **Networking**: Code related to computer networking, including socket programming, network protocols, and network simulation.
-  
-- **Software_Engineering**: Projects and assignments related to software engineering principles, software design, testing, and documentation.
-
-Each directory may contain subdirectories for specific projects or assignments, along with README files providing additional information about the contents.
 
 ## Usage
 
