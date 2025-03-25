@@ -1,11 +1,11 @@
 import cv2
 import numpy as np
 
-# Initialize variables
-drawing = False  # Flag to track mouse press
-ix, iy = -1, -1  # Initial coordinates
 
-# Create a black image
+drawing = False
+ix, iy = -1, -1
+
+
 img = np.zeros((512, 512, 3), np.uint8)
 
 def draw_text(guess =""):
@@ -35,10 +35,10 @@ while True:
     cv2.imshow('Window', img)
     key = cv2.waitKey(1) & 0xFF
 
-    if key == 27:  # 'Esc' key to exit
+    if key == 27:
         break
     elif key == ord('c'):
         img[:] = 0
         draw_text()
-        
+
 cv2.destroyAllWindows()
