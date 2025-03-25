@@ -4,6 +4,9 @@ Computer-Graphics-Basics/project2/mannequin.pdf
 *.o
 *.iml
 .idea/
+**/Dataset/
+**/Dataset
+
 
 ### IntelliJ IDEA ###
 out/

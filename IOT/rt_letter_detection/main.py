@@ -18,7 +18,7 @@ draw_text()
 def interactive_drawing(event, x, y, flags, param):
     global ix, iy, drawing
 
-    if event == cv2.EVENT_LBUTTONDOWN:  # Mouse button pressed
+    if event == cv2.EVENT_LBUTTONDOWN:
         drawing = True
         ix, iy = x, y
     elif event == cv2.EVENT_MOUSEMOVE and drawing:  # Draw while moving
