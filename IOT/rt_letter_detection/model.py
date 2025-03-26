@@ -1,9 +1,8 @@
 
 import tensorflow as tf
-from tensorflow import keras
-from tensorflow.keras import layers
+from keras import layers
 import numpy as np
-from tensorflow.keras.datasets import mnist
+from keras.api.datasets import mnist
 import matplotlib.pyplot as plt
 
 def load_emnist():

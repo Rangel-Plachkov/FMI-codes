@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-#import tensorflow as tf
+    import tensorflow as tf
 
 drawing = False
 ix, iy = -1, -1
@@ -8,7 +8,7 @@ ix, iy = -1, -1
 img = np.zeros((512, 512, 3), np.uint8)
 
 
-#model = tf.keras.models.load_model("handwritten_letter_recognition.h5")  # Added model loading
+# model = tf.keras.models.load_model("handwritten_letter_recognition.h5"
 
 def draw_text(guess=""):
     img[0:30, :] = 0
