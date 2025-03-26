@@ -10,7 +10,7 @@ import torch.optim as optim
 from tqdm import tqdm
 from torch.utils.data import DataLoader, TensorDataset
 
-file_path = '/content/drive/My Drive/DL_24-25/Data/ds_salaries.csv'
+file_path = "../Dataset/ds_salaries.csv"
 data = pd.read_csv(file_path)
 
 
