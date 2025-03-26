@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-
+#import tensorflow as tf
 
 drawing = False
 ix, iy = -1, -1
@@ -15,18 +15,25 @@ def draw_text(guess =""):
 
 draw_text()
 
-def interactive_drawing(event, x, y, flags, param):
+def interactive_drawing(event, x, y, _, __):
     global ix, iy, drawing
 
     if event == cv2.EVENT_LBUTTONDOWN:
         drawing = True
         ix, iy = x, y
-    elif event == cv2.EVENT_MOUSEMOVE and drawing:  # Draw while moving
-        cv2.line(img, (ix, iy), (x, y), (255, 255, 255), 3)
+    elif event == cv2.EVENT_MOUSEMOVE and drawing:
+        cv2.line(img, (ix, iy), (x, y), (255, 255, 255), 10)
         ix, iy = x, y
-    elif event == cv2.EVENT_LBUTTONUP:  # Mouse button released
+    elif event == cv2.EVENT_LBUTTONUP:
         drawing = False
 
+
+
+def process_image():
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    roi = gray[30:, :]
+    resized = cv2.resize(roi, (28, 28), interpolation=cv2.INTER_AREA)
+    return resized
 
 cv2.namedWindow('Window')
 cv2.setMouseCallback('Window', interactive_drawing)
@@ -40,5 +47,9 @@ while True:
     elif key == ord('c'):
         img[:] = 0
         draw_text()
+    elif key == ord('s'):
+        processed_img = process_image()
+        cv2.imwrite("image.png", processed_img)
+        print("Saved image.png")
 
 cv2.destroyAllWindows()
