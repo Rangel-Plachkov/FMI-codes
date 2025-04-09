@@ -3,9 +3,13 @@ import numpy as np
 import torch
 import torch.nn as nn
 
+DRAW_MODE_WHITE = False
+
 drawing = False
 ix, iy = -1, -1
-img = np.zeros((512, 512, 3), np.uint8)
+
+canvas_color = 0 if DRAW_MODE_WHITE else 255
+img = np.full((512, 512, 3), canvas_color, dtype=np.uint8)
 
 model = nn.Sequential(
     nn.Conv2d(1, 32, kernel_size=3, padding=1),
@@ -33,9 +37,12 @@ model.eval()
 
 
 def draw_text(guess=""):
-    img[0:30, :] = 0
+    text_bg = 0 if DRAW_MODE_WHITE else 255
+    text_color = (255, 255, 255) if DRAW_MODE_WHITE else (0, 0, 0)
+    img[0:30, :] = text_bg
     cv2.putText(img, f"Prediction: {guess}",
-                (10, 20), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 1)
+                (10, 20), cv2.FONT_HERSHEY_SIMPLEX, 0.6, text_color, 1)
+
 
 draw_text()
 
@@ -43,11 +50,13 @@ draw_text()
 def interactive_drawing(event, x, y, _, __):
     global ix, iy, drawing
 
+    draw_color = (255, 255, 255) if DRAW_MODE_WHITE else (0, 0, 0)
+
     if event == cv2.EVENT_LBUTTONDOWN:
         drawing = True
         ix, iy = x, y
     elif event == cv2.EVENT_MOUSEMOVE and drawing:
-        cv2.line(img, (ix, iy), (x, y), (255, 255, 255), 50)
+        cv2.line(img, (ix, iy), (x, y), draw_color, 50)
         ix, iy = x, y
     elif event == cv2.EVENT_LBUTTONUP:
         drawing = False
@@ -56,8 +65,13 @@ def interactive_drawing(event, x, y, _, __):
 def process_image():
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     roi = gray[30:, :]
+
+    if not DRAW_MODE_WHITE:
+        roi = cv2.bitwise_not(roi)
+
     resized = cv2.resize(roi, (28, 28), interpolation=cv2.INTER_AREA)
     return resized
+
 
 def process_image_model():
     resized = process_image()
@@ -65,7 +79,6 @@ def process_image_model():
     tensor_img = tensor_img / 255.0
     tensor_img = (tensor_img - 0.5) / 0.5
     return tensor_img
-
 
 
 def predict_letter():
@@ -80,7 +93,6 @@ def predict_letter():
         return f"{letter} ({round(confidence.item()*100,1)}%)"
 
 
-
 cv2.namedWindow('Window')
 cv2.setMouseCallback('Window', interactive_drawing)
 
@@ -91,7 +103,7 @@ while True:
     if key == 27:
         break
     elif key == ord('c'):
-        img[:] = 0
+        img[:] = canvas_color
         draw_text()
     elif key == ord('s'):
         processed_img = process_image()

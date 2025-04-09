@@ -1,5 +1,5 @@
 import cv2
-#from pyzbar import pyzbar
+from pyzbar import pyzbar
 cap = cv2.VideoCapture(0)
 
 while True:
