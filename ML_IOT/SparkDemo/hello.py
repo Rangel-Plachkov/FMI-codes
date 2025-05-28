@@ -15,7 +15,7 @@ if __name__ == '__main__':
         .config("spark.some.config.option", "some-value")\
         .getOrCreate()
 
-    # spark.sparkContext.setLogLevel("INFO")
+    #spark.sparkContext.setLogLevel("INFO")
     spark.sparkContext.setLogLevel("ERROR")
     textFile = spark.read.text("README.md")
     print(textFile.count())
