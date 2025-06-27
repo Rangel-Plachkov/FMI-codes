@@ -1,3 +1,0 @@
-D:/Programing/FMI-codes/CPP_DI/cmake-build-debug/CMakeFiles/CPP_DI.dir
-D:/Programing/FMI-codes/CPP_DI/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/Programing/FMI-codes/CPP_DI/cmake-build-debug/CMakeFiles/rebuild_cache.dir
