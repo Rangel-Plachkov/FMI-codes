@@ -57,7 +57,7 @@ SingleLinkedList<T>::~SingleLinkedList(){
 template<typename T>
 T& SingleLinkedList<T>::operator[](size_t index){
     if(index >= _size){
-        throw std::logic_error("Out of bounds\n");
+        throw std::logic_error("Out of bounds");
     }
     Node* current = _startPtr;
     for (size_t i = 0; i < index; ++i) {
@@ -69,7 +69,7 @@ T& SingleLinkedList<T>::operator[](size_t index){
 template<typename T>
 const T& SingleLinkedList<T>::operator[](size_t index) const {
     if(index >= _size){
-        throw std::logic_error("Out of bounds\n");
+        throw std::logic_error("Out of bounds");
     }
     const Node* current = _startPtr;
     for (size_t i = 0; i < index; ++i) {
@@ -118,21 +118,21 @@ void SingleLinkedList<T>::pushFront(const T& newElem){
 template<typename T>
 const T& SingleLinkedList<T>::peekBack()const{
     if(isEmpty()){
-        throw std::logic_error("Empty list\n");
+        throw std::logic_error("Empty list");
     }
     return _endPtr -> data;
 }
 template<typename T>
 const T& SingleLinkedList<T>::peekFront()const{
     if(isEmpty()){
-        throw std::logic_error("Empty list\n");
+        throw std::logic_error("Empty list");
     }
     return _startPtr -> data;
 }
 template<typename T>
 void SingleLinkedList<T>::popBack(){
     if(isEmpty()){
-        throw std::logic_error("Empty list\n");
+        throw std::logic_error("Empty list");
     }else if(_size == 1){
         delete _startPtr;
         _startPtr = nullptr;
@@ -151,7 +151,7 @@ void SingleLinkedList<T>::popBack(){
 template<typename T>
 void SingleLinkedList<T>::popFront(){
     if(isEmpty()){
-        throw std::logic_error("Empty list\n");
+        throw std::logic_error("Empty list");
     }else if(_size == 1){
         delete _startPtr;
         _startPtr = nullptr;

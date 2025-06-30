@@ -76,14 +76,14 @@ void DynamicQueue<T>::push(const T& newElem){
 template<typename T>
 const T& DynamicQueue<T>::peek()const{
     if(isEmpty()){
-        throw std::logic_error("Empty queue\n");
+        throw std::logic_error("Empty queue");
     }
     return _data[_readIdx];
 }
 template<typename T>
 void DynamicQueue<T>::pop(){
     if(isEmpty()){
-        throw std::logic_error("Empty queue\n");
+        throw std::logic_error("Empty queue");
     }
     _readIdx++;
     _size--;

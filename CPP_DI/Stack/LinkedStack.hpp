@@ -74,14 +74,14 @@ void LinkedStack<T>::push(const T& newElem){
 template<typename T>
 const T& LinkedStack<T>::peek()const{
     if (isEmpty()) {
-        throw std::logic_error("Empty stack\n");
+        throw std::logic_error("Empty stack");
     }
     return _currNode->data;
 }
 template<typename T>
 void LinkedStack<T>::pop(){
     if(isEmpty()){
-        throw std::logic_error("Empty stack\n");
+        throw std::logic_error("Empty stack");
     }
     Node* temp = _currNode;
     _currNode = _currNode ->next;

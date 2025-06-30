@@ -35,7 +35,7 @@ size_t StaticStack<T, N>::size()const{
 template<typename T, size_t N>
 void StaticStack<T, N>::push(const T& newElem){
     if(isFull()){
-        throw std::logic_error("Full stack\n");
+        throw std::logic_error("Full stack");
     }
     _data[_size] = newElem;
     _size++;
@@ -43,14 +43,14 @@ void StaticStack<T, N>::push(const T& newElem){
 template<typename T, size_t N>
 const T& StaticStack<T, N>::peek()const{
     if(isEmpty()){
-        throw std::logic_error("Empty stack\n");
+        throw std::logic_error("Empty stack");
     }
     return _data[_size-1];
 }
 template<typename T, size_t N>
 void StaticStack<T, N>::pop(){
     if(isEmpty()){
-        throw std::logic_error("Empty stack\n");
+        throw std::logic_error("Empty stack");
     }
     _size--;
 }

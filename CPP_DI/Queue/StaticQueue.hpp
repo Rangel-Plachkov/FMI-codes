@@ -36,7 +36,7 @@ size_t StaticQueue<T, N>::size()const{
 template<typename T, size_t N>
 void StaticQueue<T, N>::push(const T& newElem){
     if(isFull()){
-        throw std::logic_error("Full queue\n");
+        throw std::logic_error("Full queue");
     }
     _data[_writeId] = newElem;
     _size++;
@@ -45,14 +45,14 @@ void StaticQueue<T, N>::push(const T& newElem){
 template<typename T, size_t N>
 const T& StaticQueue<T, N>::peek()const{
     if(isEmpty()){
-        throw std::logic_error("Empty queue\n");
+        throw std::logic_error("Empty queue");
     }
     return _data[_readId];
 }
 template<typename T, size_t N>
 void StaticQueue<T, N>::pop(){
     if(isEmpty()){
-        throw std::logic_error("Empty queue\n");
+        throw std::logic_error("Empty queue");
     }
     _readId = (_readId + 1) % N;
     _size--;

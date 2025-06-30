@@ -74,14 +74,14 @@ void DynamicStack<T>::push(const T& newElem){
 template<typename T>
 const T& DynamicStack<T>::peek()const{
     if(isEmpty()){
-        throw std::logic_error("Empty stack\n");
+        throw std::logic_error("Empty stack");
     }
     return _data[_size - 1];
 }
 template<typename T>
 void DynamicStack<T>::pop(){
     if(isEmpty()){
-        throw std::logic_error("Empty stack\n");
+        throw std::logic_error("Empty stack");
     }
     _size--;
 }
