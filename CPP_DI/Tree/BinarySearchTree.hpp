@@ -125,7 +125,6 @@ typename BinarySearchTree<T>::Node* BinarySearchTree<T>::remove_rec(Node* curr_r
     } else if (elemToRemove > curr_root->data) {
         curr_root->right = remove_rec(curr_root->right, elemToRemove);
     } else {
-        // Case: found node to delete
         if (!curr_root->left) {
             Node* temp = curr_root->right;
             delete curr_root;
@@ -137,7 +136,6 @@ typename BinarySearchTree<T>::Node* BinarySearchTree<T>::remove_rec(Node* curr_r
             _size--;
             return temp;
         } else {
-            // Node has two children: find min in right subtree
             Node* minNode = findMinSubTree(curr_root->right);
             std::swap(curr_root->data, minNode->data);
             curr_root->right = remove_rec(curr_root->right, elemToRemove);
